@@ -1,75 +1,108 @@
-# React + TypeScript + Vite
+# Mi Sitio Médico
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web desarrollada con React, TypeScript y Vite, orientada a la gestión y presentación de servicios médicos.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologías
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Frontend
 
-## React Compiler
+* React 19
+* TypeScript
+* React Router DOM 7
+* Zustand
+* Tailwind CSS 4
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+### Herramientas de Desarrollo
 
-Note: This will impact Vite dev & build performances.
+* Vite 8
+* ESLint
+* React Compiler
+* Babel
 
-## Expanding the ESLint configuration
+## 📦 Instalación
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Clona el repositorio:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone <repository-url>
+cd mi-sitio-medico
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Instala las dependencias:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+## 🖥️ Desarrollo
+
+Inicia el servidor de desarrollo:
+
+```bash
+npm run start
+```
+
+La aplicación estará disponible en:
+
+```text
+http://localhost:5173
+```
+
+## 🏗️ Build de Producción
+
+Genera la versión optimizada para producción:
+
+```bash
+npm run build
+```
+
+Los archivos generados se almacenarán en:
+
+```text
+dist/
+```
+
+## 👀 Vista Previa del Build
+
+```bash
+npm run preview
+```
+
+## 🔍 Linting
+
+Ejecuta las validaciones de código:
+
+```bash
+npm run lint
+```
+
+## 📁 Estructura Recomendada
+
+```text
+src/
+├── assets/
+├── components/
+├── hooks/
+├── layouts/
+├── pages/
+├── router/
+├── services/
+├── store/
+├── types/
+├── utils/
+├── App.tsx
+└── main.tsx
+```
+
+## ⚙️ Scripts Disponibles
+
+| Script            | Descripción                     |
+| ----------------- | ------------------------------- |
+| `npm run start`   | Inicia el entorno de desarrollo |
+| `npm run build`   | Genera el build de producción   |
+| `npm run preview` | Visualiza el build generado     |
+| `npm run lint`    | Ejecuta ESLint                  |
+
+## 📄 Licencia
+
+Proyecto privado.
