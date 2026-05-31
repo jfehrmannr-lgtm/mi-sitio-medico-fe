@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-rosafifi-50: #fff8fb;
+  --color-rosafifi-100: #fdeff5;
+  --color-rosafifi-200: #f9dbe8;
+  --color-rosafifi-300: #f3c4d9;
+  --color-rosafifi-400: #e9a9c5;
+  --color-rosafifi-500: #d68aa8;
+  --color-rosafifi-600: #c76f92;
+  --color-rosafifi-700: #b45b80;
+  --color-rosafifi-800: #8f4864;
+  --color-rosafifi-900: #69354a;
+  --color-pinkbg-std: #FFF6F6
+}
