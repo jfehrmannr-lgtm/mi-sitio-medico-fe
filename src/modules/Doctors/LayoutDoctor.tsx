@@ -5,7 +5,7 @@ import IDCard from '../../layout/templates/IDCard/IDCard'
 const LayoutDoctor = () => {
   const { selectedDoctor } = DoctorStore()
 
-  if(selectedDoctor && selectedDoctor.selectedLayout === 'idCard'){
+  if(selectedDoctor && selectedDoctor.selectedLayout.layout.layoutName === 'idCard'){
     return <IDCard selectedDoctor={selectedDoctor} />
   }
 }

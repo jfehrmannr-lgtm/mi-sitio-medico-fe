@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Outlet } from 'react-router-dom'
 
 const Layout = () => {
   return (
-    <div className='h-full w-full'>
-      <Outlet/>
-    </div>
+    <Fragment>
+      <div className='h-full w-full'>
+        <Outlet/>
+      </div>
+    </Fragment>
   )
 }
 

@@ -1,3 +1,6 @@
+import type { IColorPalette } from "./IColorPalette";
+import type { ILayout } from "./ILayout";
+
 export interface IDoctorSocialMedia {
   media: 'instagram' | 'facebook' | 'linkedin' | 'tiktok' | 'youtube' | 'x' | 'website';
   link: string;
@@ -12,7 +15,8 @@ export interface IDoctorUser {
   email: string;
   phone?: string;
 
-  specialty: string;
+  degree: string[];
+  specialty: string[];
 
   profileImage?: string;
   description?: string;
@@ -32,10 +36,15 @@ export interface IDoctorUser {
 
   isActive: boolean;
 
+  fonasa: boolean
+
   createdAt: string;
   updatedAt: string;
 
   socialMedias: IDoctorSocialMedia[];
 
-  selectedLayout: "idCard"
+  selectedLayout: {
+    layout: ILayout,
+    colorPalette: IColorPalette
+  }
 }

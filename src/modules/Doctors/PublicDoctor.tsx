@@ -12,8 +12,12 @@ const PublicDoctor = () => {
   useEffect(() => {
     const doctor: IDoctorUser | undefined = doctorMock.find((doctorMockElement) => doctorMockElement._id === id)
 
+    console.debug(doctor)
+
     if(doctor) setSelectedDoctor(doctor)
   }, [id, setSelectedDoctor])
+
+  console.debug(!isLoadingDoctor, !selectedDoctor)
 
   if(isLoadingDoctor) {
     return <>Cargando Doctor</>

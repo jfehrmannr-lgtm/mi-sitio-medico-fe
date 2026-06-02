@@ -4,13 +4,14 @@ import type { IDoctorUser } from "../types/IDoctorUser";
 export const doctorMock: IDoctorUser[] = [{
   _id: 'doc-001',
 
-  firstName: 'Claudia',
-  lastName: 'Gómez',
+  firstName: 'Dra. Claudia',
+  lastName: 'Gómez Romero',
 
   email: 'claudia.gomez@example.com',
   phone: '+56 9 1234 5678',
 
-  specialty: 'Residente de Psiquiatría',
+  degree: ['Médico General', 'Residente de Psiquiatría'],
+  specialty: ['Psiquiatría Adultos'],
 
   profileImage: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2',
 
@@ -39,8 +40,33 @@ export const doctorMock: IDoctorUser[] = [{
     }
   ],
 
+  fonasa: false,
+
+  selectedLayout: {
+    layout: {
+      _id: "001",
+      layoutName: "idCard",
+      type: "premium"
+    },
+    colorPalette: {
+      background: '#FFF6F6',
+
+      primary: '#8A6A5B',
+      secondary: '#D8B4A0',
+      accent: '#8FA7A3',
+
+      text: '#3E302A',
+
+      success: '#4CAF50',
+      warning: '#FFB74D',
+      error: '#E57373',
+      info: '#64B5F6',
+
+      border: '#E8DCDC',
+      surface: '#FFFFFF'
+    }
+  },
+
   createdAt: '2026-05-30T00:00:00.000Z',
   updatedAt: '2026-05-30T00:00:00.000Z',
-
-  selectedLayout: 'idCard'
 }];

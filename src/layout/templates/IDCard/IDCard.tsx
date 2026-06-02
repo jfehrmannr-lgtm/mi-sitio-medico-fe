@@ -1,57 +1,79 @@
-import React from 'react'
+import React, { useState } from 'react'
 import type { IDoctorUser } from '../../../types/IDoctorUser'
-import { StarOutlined } from '@ant-design/icons'
-import { Rate } from 'antd'
+import { DollarOutlined, ProfileOutlined, ScheduleOutlined, UserOutlined } from '@ant-design/icons'
+import IDCardProfile from './IDCardProfile'
+import IDCardSchedule from './IDCardSchedule'
+import { AnimatePresence, motion } from 'framer-motion'
 
 interface IIDCard {
   selectedDoctor: IDoctorUser
 }
 
+const animationPreset = {
+  initial: { opacity: 0, scale: 0.98 },
+  animate: { opacity: 1, scale: 1 },
+  exit: { opacity: 0, scale: 0.98 },
+  transition: { duration: 0.2 }
+}
+
 const IDCard = ({
   selectedDoctor
 }: IIDCard) => {
+  const [showSelectedView, setShowSelectedView] = useState<"Profile" | "Description" | "Schedule" | "Service">("Profile")
 
   return (
-    <div className='bg-pinkbg-std h-full w-full flex justify-center items-center'>
+    <div style={{backgroundColor: selectedDoctor.selectedLayout.colorPalette.background}} className='h-full w-full flex justify-center items-center'>
       <div className='w-130 h-145 flex'>
         <div className='bg-white w-full h-full rounded-2xl py-2 shadow'>
-          <div className='w-full h-full flex flex-col'>
-            <div className='py-2 px-4 text-2xl font-semibold'>Dra. Claudia Gómez Romero</div>
-            <div className='w-full h-200 px-4'>
-              <div className='border rounded-2xl h-full w-full'></div>
-            </div>
-            <div className='py-2'>
-              <span className='px-4 font-semibold'>Médico General | Residente de Psiquiatría</span>
-            </div>
-            <div className='border-t border-gray-200'></div>
-            <div className='py-2'>
-              <span className='px-4'>N° Licencia: 666222 Médico general</span>
-            </div>
-            <div className='border-t border-gray-200'></div>
-            <div className='py-2'>
-              <span className='px-4'>Araucanía | Angol | Chile | En remoto</span>
-            </div>
-            <div className='border-t border-gray-200'></div>
-            <div className='py-2'>
-              <span className='px-4'>CONACEM Psiquiatría Adultos</span>
-            </div>
-            <div className='border-t border-gray-200'></div>
-            <div className=' py-2'>
-              <span className='px-4'>Text5</span>
-            </div>
-            <div className='border-t border-gray-200'></div>
-            <div className='pt-4 pb-2 flex px-4 justify-between'>
-              <span className='font-semibold'>Rate: 5</span>
-              <Rate disabled allowHalf defaultValue={5} size='large' />
-              <span className='font-semibold'>(450)</span>
-            </div>
-          </div>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={showSelectedView}
+              className="flex flex-col h-full"
+              initial={animationPreset.initial}
+              animate={animationPreset.animate}
+              exit={animationPreset.exit}
+              transition={animationPreset.transition}
+            >
+              {showSelectedView === "Profile" && (
+                <IDCardProfile selectedDoctor={selectedDoctor} />
+              )}
+              {showSelectedView === "Description" && (
+                <></>
+              )}
+              {showSelectedView === "Service" && (
+                <></>
+              )}
+              {showSelectedView === "Schedule" && (
+                <IDCardSchedule />
+              )}
+            </motion.div>
+          </AnimatePresence>
         </div>
         <div className='w-20 flex flex-col justify-between py-16'>
-          <div className='bg-white w-full h-18 rounded-br-2xl rounded-tr-2xl'></div>
-          <div className='bg-gray-300 w-full h-18 rounded-br-2xl rounded-tr-2xl'></div>
-          <div className='bg-gray-300 w-full h-18 rounded-br-2xl rounded-tr-2xl'></div>
-          <div className='bg-gray-300 w-full h-18 rounded-br-2xl rounded-tr-2xl'></div>
+          <button
+            onClick={() => setShowSelectedView("Profile")}
+            className={`${showSelectedView === "Profile" ? 'bg-white w-14' : 'bg-gray-300 w-12'} flex items-center justify-center transition h-18 rounded-br-2xl rounded-tr-2xl cursor-pointer shadow-[1px_2px_2px_-2px_#999]`}
+          >
+            <UserOutlined style={{fontSize: 25}} />
+          </button>
+          <button
+            onClick={() => setShowSelectedView("Description")}
+            className={`${showSelectedView === "Description" ? 'bg-white w-14' : 'bg-gray-300 w-12'} flex items-center justify-center transition h-18 rounded-br-2xl rounded-tr-2xl cursor-pointer shadow-[1px_2px_2px_-2px_#999]`}
+          >
+            <DollarOutlined style={{fontSize: 25}} />
+          </button>
+          <button
+            onClick={() => setShowSelectedView("Service")}
+            className={`${showSelectedView === "Service" ? 'bg-white w-14' : 'bg-gray-300 w-12'} flex items-center justify-center transition h-18 rounded-br-2xl rounded-tr-2xl cursor-pointer shadow-[1px_2px_2px_-2px_#999]`}
+          >
+            <ScheduleOutlined style={{fontSize: 25}} />
+          </button>
+          <button
+            onClick={() => setShowSelectedView("Schedule")}
+            className={`${showSelectedView === "Schedule" ? 'bg-white w-14' : 'bg-gray-300 w-12'} flex items-center justify-center transition h-18 rounded-br-2xl rounded-tr-2xl cursor-pointer shadow-[1px_2px_2px_-2px_#999]`}
+          >
+            <ProfileOutlined style={{fontSize: 25}} />
+          </button>
         </div>
       </div>
     </div>
