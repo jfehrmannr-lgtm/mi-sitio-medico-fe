@@ -1,5 +1,5 @@
 import type { IDoctorUser } from '@/types/IDoctorUser'
-import React, { Fragment } from 'react'
+import React from 'react'
 import Tag from './components/Tag'
 import Box from './components/Box'
 import Button from '@/components/Button/Button'
