@@ -1,17 +1,18 @@
 export interface IColorPalette {
-  background: '#FFF6F6',
+  background: string,
+  button: string
 
-  primary: '#8A6A5B',
-  secondary: '#D8B4A0',
-  accent: '#8FA7A3',
+  primary: string,
+  secondary: string,
+  accent: string,
 
-  text: '#3E302A',
+  text: string,
 
-  success: '#4CAF50',
-  warning: '#FFB74D',
-  error: '#E57373',
-  info: '#64B5F6',
+  success: string,
+  warning: string,
+  error: string,
+  info: string,
 
-  border: '#E8DCDC',
-  surface: '#FFFFFF'
+  border: string,
+  surface: string
 }

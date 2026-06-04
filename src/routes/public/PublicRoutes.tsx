@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
-import Layout from '../../layout/Layout'
-import PublicDoctor from '../../modules/Doctors/PublicDoctor'
+import Layout from '@layout/Layout'
+import PublicDoctor from '@modules/Doctors/PublicDoctor'
 
 const PublicRoutes = () => {
   return (

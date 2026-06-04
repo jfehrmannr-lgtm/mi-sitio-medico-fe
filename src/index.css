@@ -9,3 +9,19 @@
   height: 100%;
   font-family: Montserrat;
 }
+
+@keyframes button-wave {
+  0% {
+    transform: scale(0);
+    opacity: 0.45;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.animate-button-wave {
+  animation: button-wave 500ms ease-out forwards;
+}

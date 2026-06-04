@@ -1,4 +1,4 @@
-import type { IDoctorUser } from "../../types/IDoctorUser"
+import type { IDoctorUser } from "@app-types/IDoctorUser"
 
 export interface IDoctorStore {
   selectedDoctor: IDoctorUser | null

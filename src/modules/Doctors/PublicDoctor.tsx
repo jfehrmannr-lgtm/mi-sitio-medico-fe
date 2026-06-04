@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { doctorMock } from '../../mocks/mocks'
-import type { IDoctorUser } from '../../types/IDoctorUser'
-import { DoctorStore } from '../../stores/DoctorStore/Doctor.store'
+import { doctorMock } from '@mocks/mocks'
+import type { IDoctorUser } from '@app-types/IDoctorUser'
+import { DoctorStore } from '@stores/DoctorStore/Doctor.store'
 import LayoutDoctor from './LayoutDoctor'
 
 const PublicDoctor = () => {

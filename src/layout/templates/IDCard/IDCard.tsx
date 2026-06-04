@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import type { IDoctorUser } from '../../../types/IDoctorUser'
+import type { IDoctorUser } from '@app-types/IDoctorUser'
 import { DollarOutlined, ProfileOutlined, ScheduleOutlined, UserOutlined } from '@ant-design/icons'
 import IDCardProfile from './IDCardProfile'
 import IDCardSchedule from './IDCardSchedule'
 import { AnimatePresence, motion } from 'framer-motion'
+import IDCardServices from './IDCardServices'
 
 interface IIDCard {
   selectedDoctor: IDoctorUser
@@ -19,10 +20,10 @@ const animationPreset = {
 const IDCard = ({
   selectedDoctor
 }: IIDCard) => {
-  const [showSelectedView, setShowSelectedView] = useState<"Profile" | "Description" | "Schedule" | "Service">("Profile")
+  const [showSelectedView, setShowSelectedView] = useState<"profile" | "description" | "schedule" | "service">("profile")
 
   return (
-    <div style={{backgroundColor: selectedDoctor.selectedLayout.colorPalette.background}} className='h-full w-full flex justify-center items-center'>
+    <div style={{ backgroundColor: selectedDoctor.selectedLayout.colorPalette.background }} className='text-gray-800 h-full w-full flex justify-center items-center'>
       <div className='w-130 h-145 flex'>
         <div className='bg-white w-full h-full rounded-2xl py-2 shadow'>
           <AnimatePresence mode="wait">
@@ -34,45 +35,49 @@ const IDCard = ({
               exit={animationPreset.exit}
               transition={animationPreset.transition}
             >
-              {showSelectedView === "Profile" && (
+              {showSelectedView === "profile" && (
                 <IDCardProfile selectedDoctor={selectedDoctor} />
               )}
-              {showSelectedView === "Description" && (
+              {showSelectedView === "description" && (
                 <></>
               )}
-              {showSelectedView === "Service" && (
-                <></>
+              {showSelectedView === "service" && (
+                <IDCardServices selectedDoctor={selectedDoctor} />
               )}
-              {showSelectedView === "Schedule" && (
-                <IDCardSchedule />
+              {showSelectedView === "schedule" && (
+                <IDCardSchedule selectedDoctor={selectedDoctor} />
               )}
             </motion.div>
           </AnimatePresence>
         </div>
         <div className='w-20 flex flex-col justify-between py-16'>
           <button
-            onClick={() => setShowSelectedView("Profile")}
-            className={`${showSelectedView === "Profile" ? 'bg-white w-14' : 'bg-gray-300 w-12'} flex items-center justify-center transition h-18 rounded-br-2xl rounded-tr-2xl cursor-pointer shadow-[1px_2px_2px_-2px_#999]`}
+            style={{ backgroundColor: `${showSelectedView === "profile" ? selectedDoctor.selectedLayout.colorPalette.button : 'white'}` }}
+            onClick={() => setShowSelectedView("profile")}
+            className={`${showSelectedView === "profile" ? '' : 'w-12'} flex items-center justify-center transition h-18 rounded-br-2xl rounded-tr-2xl cursor-pointer shadow-[1px_2px_2px_-2px_#999]`}
           >
-            <UserOutlined style={{fontSize: 25}} />
+            <UserOutlined style={{ fontSize: 25, color: `${showSelectedView === "profile" ? 'white' : 'black'}` }} />
           </button>
           <button
-            onClick={() => setShowSelectedView("Description")}
-            className={`${showSelectedView === "Description" ? 'bg-white w-14' : 'bg-gray-300 w-12'} flex items-center justify-center transition h-18 rounded-br-2xl rounded-tr-2xl cursor-pointer shadow-[1px_2px_2px_-2px_#999]`}
+            style={{ backgroundColor: `${showSelectedView === "description" ? selectedDoctor.selectedLayout.colorPalette.button : 'white'}` }}
+            onClick={() => setShowSelectedView("description")}
+            className={`${showSelectedView === "description" ? 'bg-white w-14' : 'bg-gray-300 w-12'} flex items-center justify-center transition h-18 rounded-br-2xl rounded-tr-2xl cursor-pointer shadow-[1px_2px_2px_-2px_#999]`}
           >
-            <DollarOutlined style={{fontSize: 25}} />
+            <ProfileOutlined style={{ fontSize: 25, color: `${showSelectedView === "description" ? 'white' : 'black'}` }} />
           </button>
           <button
-            onClick={() => setShowSelectedView("Service")}
-            className={`${showSelectedView === "Service" ? 'bg-white w-14' : 'bg-gray-300 w-12'} flex items-center justify-center transition h-18 rounded-br-2xl rounded-tr-2xl cursor-pointer shadow-[1px_2px_2px_-2px_#999]`}
+            style={{ backgroundColor: `${showSelectedView === "service" ? selectedDoctor.selectedLayout.colorPalette.button : 'white'}` }}
+            onClick={() => setShowSelectedView("service")}
+            className={`${showSelectedView === "service" ? 'bg-white w-14' : 'bg-gray-300 w-12'} flex items-center justify-center transition h-18 rounded-br-2xl rounded-tr-2xl cursor-pointer shadow-[1px_2px_2px_-2px_#999]`}
           >
-            <ScheduleOutlined style={{fontSize: 25}} />
+            <DollarOutlined style={{ fontSize: 25, color: `${showSelectedView === "service" ? 'white' : 'black'}` }} />
           </button>
           <button
-            onClick={() => setShowSelectedView("Schedule")}
-            className={`${showSelectedView === "Schedule" ? 'bg-white w-14' : 'bg-gray-300 w-12'} flex items-center justify-center transition h-18 rounded-br-2xl rounded-tr-2xl cursor-pointer shadow-[1px_2px_2px_-2px_#999]`}
+            style={{ backgroundColor: `${showSelectedView === "schedule" ? selectedDoctor.selectedLayout.colorPalette.button : 'white'}` }}
+            onClick={() => setShowSelectedView("schedule")}
+            className={`${showSelectedView === "schedule" ? 'bg-white w-14' : 'bg-gray-300 w-12'} flex items-center justify-center transition h-18 rounded-br-2xl rounded-tr-2xl cursor-pointer shadow-[1px_2px_2px_-2px_#999]`}
           >
-            <ProfileOutlined style={{fontSize: 25}} />
+            <ScheduleOutlined style={{ fontSize: 25, color: `${showSelectedView === "schedule" ? 'white' : 'black'}` }} />
           </button>
         </div>
       </div>

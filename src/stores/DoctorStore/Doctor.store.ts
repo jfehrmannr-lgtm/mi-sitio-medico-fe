@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import type { IDoctorStore } from "./Doctor.interface";
-import type { IDoctorUser } from "../../types/IDoctorUser";
+import type { IDoctorUser } from "@app-types/IDoctorUser";
 
 export const DoctorStore = create<IDoctorStore>((set) => ({
   selectedDoctor: null,

@@ -1,4 +1,4 @@
-import type { IDoctorUser } from "../types/IDoctorUser";
+import type { IDoctorUser } from "@app-types/IDoctorUser";
 
 
 export const doctorMock: IDoctorUser[] = [{
@@ -26,7 +26,13 @@ export const doctorMock: IDoctorUser[] = [{
   availableForAppointments: true,
   remoteAttention: true,
 
-  consultationPrice: 35000,
+  services: [{
+    _id: 'service-001',
+    serviceName: 'Consulta Psiquiatrica',
+    serviceDescription: 'Psiquiatría Adulto',
+    serviceDuration: 30,
+    servicePrice: 35000
+  }],
 
   rating: 4.9,
   reviewCount: 128,
@@ -50,6 +56,7 @@ export const doctorMock: IDoctorUser[] = [{
     },
     colorPalette: {
       background: '#FFF6F6',
+      button: '#FF95C1',
 
       primary: '#8A6A5B',
       secondary: '#D8B4A0',

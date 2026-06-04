@@ -21,5 +21,6 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
+  "extends": "./tsconfig.paths.json",
   "include": ["src"]
 }

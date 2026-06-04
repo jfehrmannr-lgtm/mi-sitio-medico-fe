@@ -1,5 +1,6 @@
 import type { IColorPalette } from "./IColorPalette";
 import type { ILayout } from "./ILayout";
+import type { IService } from "./IService";
 
 export interface IDoctorSocialMedia {
   media: 'instagram' | 'facebook' | 'linkedin' | 'tiktok' | 'youtube' | 'x' | 'website';
@@ -29,7 +30,7 @@ export interface IDoctorUser {
 
   availableForAppointments: boolean;
   remoteAttention: boolean;
-  consultationPrice: number;
+  services: IService[];
 
   rating: number;
   reviewCount: number;

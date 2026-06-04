@@ -1,6 +1,6 @@
 import React from 'react'
-import { DoctorStore } from '../../stores/DoctorStore/Doctor.store'
-import IDCard from '../../layout/templates/IDCard/IDCard'
+import { DoctorStore } from '@stores/DoctorStore/Doctor.store'
+import IDCard from '@layout/templates/IDCard/IDCard'
 
 const LayoutDoctor = () => {
   const { selectedDoctor } = DoctorStore()

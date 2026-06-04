@@ -1,6 +1,7 @@
 import { Rate } from 'antd'
 import React from 'react'
-import type { IDoctorUser } from '../../../types/IDoctorUser'
+import type { IDoctorUser } from '@app-types/IDoctorUser'
+import img from '@assets/images/doctora.png'
 
 interface IIDCardProfile {
   selectedDoctor: IDoctorUser
@@ -15,8 +16,8 @@ const IDCardProfile = ({
         <span>{selectedDoctor.firstName}</span>
         <span>{selectedDoctor.lastName}</span>
       </div>
-      <div className='w-full h-200 px-4'>
-        <div className='border rounded-2xl h-full w-full'></div>
+      <div className='w-full h-full px-4 flex items-center justify-center'>
+        <img className='rounded-2xl h-65' src={img} />
       </div>
       <div className='py-2'>
         <span className='px-4 font-semibold'>{selectedDoctor.degree.map(degreeElement => degreeElement + ' | ')}</span>
