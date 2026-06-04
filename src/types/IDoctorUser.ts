@@ -1,5 +1,6 @@
 import type { IColorPalette } from "./IColorPalette";
 import type { ILayout } from "./ILayout";
+import type { IReviews } from "./IReviews";
 import type { IService } from "./IService";
 
 export interface IDoctorSocialMedia {
@@ -20,7 +21,7 @@ export interface IDoctorUser {
   specialty: string[];
 
   profileImage?: string;
-  description?: string;
+  description?: string[];
 
   medicalLicenseNumber: string;
 
@@ -34,6 +35,7 @@ export interface IDoctorUser {
 
   rating: number;
   reviewCount: number;
+  reviews?: IReviews[]
 
   isActive: boolean;
 

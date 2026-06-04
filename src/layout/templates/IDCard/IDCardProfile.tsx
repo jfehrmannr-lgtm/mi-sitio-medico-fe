@@ -2,6 +2,7 @@ import { Rate } from 'antd'
 import React from 'react'
 import type { IDoctorUser } from '@app-types/IDoctorUser'
 import img from '@assets/images/doctora.png'
+import Chip from '@/components/Chip/Chip'
 
 interface IIDCardProfile {
   selectedDoctor: IDoctorUser
@@ -20,7 +21,11 @@ const IDCardProfile = ({
         <img className='rounded-2xl h-65' src={img} />
       </div>
       <div className='py-2'>
-        <span className='px-4 font-semibold'>{selectedDoctor.degree.map(degreeElement => degreeElement + ' | ')}</span>
+        <div style={{ color: selectedDoctor.selectedLayout.colorPalette.complementTextSecondary}} className='px-4 font-semibold space-x-1 flex'>
+          {selectedDoctor.degree.map(degreeElement => (
+            <Chip size='small' label={degreeElement} color={selectedDoctor.selectedLayout.colorPalette.complementSecondary} />
+          ))}
+        </div>
       </div>
       <div className='border-t border-gray-200'></div>
       <div className='py-2'>

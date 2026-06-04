@@ -1,13 +1,17 @@
 export interface IColorPalette {
-  background: string,
+  backgroundPrimary: string,
+  backgroundSecondary: string,
+  
+  complementPrimary: string,
+  complementSecondary: string
+  
+  textPrimary: string,
+  textSecondary: string
+  complementTextPrimary: string
+  complementTextSecondary: string
+
   button: string
-
-  primary: string,
-  secondary: string,
-  accent: string,
-
-  text: string,
-
+  
   success: string,
   warning: string,
   error: string,

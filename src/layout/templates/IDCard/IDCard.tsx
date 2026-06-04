@@ -5,6 +5,7 @@ import IDCardProfile from './IDCardProfile'
 import IDCardSchedule from './IDCardSchedule'
 import { AnimatePresence, motion } from 'framer-motion'
 import IDCardServices from './IDCardServices'
+import IDCardDescriptions from './IDCardDescriptions'
 
 interface IIDCard {
   selectedDoctor: IDoctorUser
@@ -23,7 +24,7 @@ const IDCard = ({
   const [showSelectedView, setShowSelectedView] = useState<"profile" | "description" | "schedule" | "service">("profile")
 
   return (
-    <div style={{ backgroundColor: selectedDoctor.selectedLayout.colorPalette.background }} className='text-gray-800 h-full w-full flex justify-center items-center'>
+    <div style={{ backgroundColor: selectedDoctor.selectedLayout.colorPalette.backgroundPrimary }} className='text-gray-800 h-full w-full flex justify-center items-center'>
       <div className='w-130 h-145 flex'>
         <div className='bg-white w-full h-full rounded-2xl py-2 shadow'>
           <AnimatePresence mode="wait">
@@ -39,7 +40,7 @@ const IDCard = ({
                 <IDCardProfile selectedDoctor={selectedDoctor} />
               )}
               {showSelectedView === "description" && (
-                <></>
+                <IDCardDescriptions selectedDoctor={selectedDoctor} />
               )}
               {showSelectedView === "service" && (
                 <IDCardServices selectedDoctor={selectedDoctor} />

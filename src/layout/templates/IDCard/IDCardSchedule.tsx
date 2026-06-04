@@ -27,7 +27,7 @@ const IDCardSchedule = ({
           return (
             <Tag>
               <Fragment>
-                <Box color={selectedDoctor.selectedLayout.colorPalette.button} number={29} label='Lunes' />
+                <Box backgroundColor={selectedDoctor.selectedLayout.colorPalette.complementSecondary} textColor={selectedDoctor.selectedLayout.colorPalette.complementTextSecondary} number={29} label='Lunes' />
                 <div className='flex flex-col items-center justify-center px-4 text-md font-semibold'>
                   <span>09:00</span>
                   <span>10:00</span>

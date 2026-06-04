@@ -22,7 +22,11 @@ const IDCardServices = ({
           <Tag>
             <div className='w-full'>
               <div className='flex justify-center items-center w-full'>
-                <Box color={selectedDoctor.selectedLayout.colorPalette.button} number={servicesElement.serviceDuration} label='mins' />
+                <Box 
+                  backgroundColor={selectedDoctor.selectedLayout.colorPalette.complementSecondary}
+                  textColor={selectedDoctor.selectedLayout.colorPalette.complementTextSecondary}
+                  number={servicesElement.serviceDuration} label='mins' 
+                />
                 <div className='flex flex-col px-4 flex-1'>
                   <span className='font-semibold text-lg'>{servicesElement.serviceName}</span>
                   <span>{servicesElement.serviceDescription}</span>
