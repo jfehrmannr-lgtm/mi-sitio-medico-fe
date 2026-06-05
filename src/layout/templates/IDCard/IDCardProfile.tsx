@@ -21,7 +21,7 @@ const IDCardProfile = ({
         <img className='rounded-2xl h-65' src={img} />
       </div>
       <div className='py-2'>
-        <div style={{ color: selectedDoctor.selectedLayout.colorPalette.complementTextSecondary}} className='px-4 font-semibold space-x-1 flex'>
+        <div style={{ color: selectedDoctor.selectedLayout.colorPalette.complementTextSecondary}} className='w-screen max-w-full py-2 px-4 font-semibold space-x-1 flex whitespace-nowrap overflow-x-auto'>
           {selectedDoctor.degree.map(degreeElement => (
             <Chip size='small' label={degreeElement} color={selectedDoctor.selectedLayout.colorPalette.complementSecondary} />
           ))}

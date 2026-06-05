@@ -13,3 +13,7 @@
   --color-rosafifi-900: #69354a;
   --color-pinkbg-std: #FFF6F6
 }
+
+@theme {
+  --breakpoint-xs: 400px;
+}

@@ -15,10 +15,10 @@ const IDCardDescriptions = ({
     <div className='flex grow overflow-hidden relative'>
       <div className='bg-white h-full w-full overflow-auto'>
         <div className='bg-white text-2xl py-2 px-4 font-semibold space-x-1.5 sticky top-0'>Sobre mi</div>
+        <Divider />
         <div className='px-4 space-y-4 pb-4'>
           {selectedDoctor.description?.map((descriptionElement) => <p>{descriptionElement}</p>)}
         </div>
-        <Divider />
         <div className='bg-white text-2xl py-2 px-4 font-semibold space-x-1.5 sticky top-0 z-10'>Reseñas</div>
         {selectedDoctor.reviews?.map((reviewsElement) => (
           <Tag>
